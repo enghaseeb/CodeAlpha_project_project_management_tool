@@ -1,0 +1,6 @@
+import client from './client';
+
+export const registerUser = (data) => client.post('/auth/register', data).then((r) => r.data);
+export const loginUser = (data) => client.post('/auth/login', data).then((r) => r.data);
+export const fetchMe = () => client.get('/auth/me').then((r) => r.data);
+export const searchUsers = (q) => client.get('/auth/search', { params: { q } }).then((r) => r.data.users);
